@@ -15,10 +15,10 @@ public class UserService {
         users.add(new User("Example", "Name"));
     }
 
-    public UserService(){}
+    public UserService() {
+    }
 
     public List<User> getUsers() {
-        users.add(new User("Example", "Name"));
         return users;
         /*
         if(users.size()>0){
@@ -26,5 +26,24 @@ public class UserService {
         }
         return null;
          */
+    }
+
+    public List<User> getNamedUsers(String firstName) {
+        List<User> output = new ArrayList<>();
+        for (User user : users) {
+            if (user.getFirstName().equals(firstName)) {
+                output.add(user);
+            }
+        }
+        return output;
+    }
+
+    public User getUser(String firstName, Long id) {
+        for (User user : users) {
+            if (user.getFirstName().equals(firstName) && user.getId().equals(id)) {
+                return user;
+            }
+        }
+        return null;
     }
 }
