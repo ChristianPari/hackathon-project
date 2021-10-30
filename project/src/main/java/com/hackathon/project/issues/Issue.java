@@ -5,16 +5,16 @@ import com.hackathon.project.users.User;
 import java.util.UUID;
 
 public class Issue {
-    private UUID id;
-    private User person;
+    private UUID id = UUID.randomUUID();
+    private User user;
     private String subject;
     private String content;
 
     public Issue() {
     }
 
-    public Issue(User person, String subject, String content) {
-        this.person = person;
+    public Issue(User user, String subject, String content) {
+        this.user = user;
         this.subject = subject;
         this.content = content;
     }
@@ -28,11 +28,11 @@ public class Issue {
     }
 
     public User getPerson() {
-        return person;
+        return user;
     }
 
-    public void setPerson(User person) {
-        this.person = person;
+    public void setPerson(User user) {
+        this.user = user;
     }
 
     public String getSubject() {

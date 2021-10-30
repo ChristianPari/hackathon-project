@@ -4,13 +4,15 @@ import com.hackathon.project.issues.Issue;
 
 import java.util.List;
 import java.util.UUID;
+import java.util.concurrent.atomic.AtomicLong;
 
 public class User {
-    private UUID id;
+    public static AtomicLong atomicLong = new AtomicLong();
+    private Long id = atomicLong.incrementAndGet();
     private String firstName;
     private String lastName;
+    private String password;
     private List<String> roles;
-    private List<Issue> issues;
     private Integer issuesHandled;
 
     public User() {
@@ -21,11 +23,11 @@ public class User {
         this.lastName = lastName;
     }
 
-    public UUID getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -51,14 +53,6 @@ public class User {
 
     public void setRoles(List<String> roles) {
         this.roles = roles;
-    }
-
-    public List<Issue> getIssues() {
-        return issues;
-    }
-
-    public void setIssues(List<Issue> issues) {
-        this.issues = issues;
     }
 
     public Integer getIssuesHandled() {
