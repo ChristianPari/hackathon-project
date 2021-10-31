@@ -10,8 +10,8 @@ import java.util.Objects;
 @RequestMapping("/users")
 public class UserController {
 
-  @Autowired
-  public UserService userService;
+    @Autowired
+    public UserService userService;
 
 //  @GetMapping("/intro")
 //  public String intro() {
@@ -25,27 +25,18 @@ public class UserController {
 //    return html;
 //  }
 
-  @GetMapping("/")
-  public List<User> getUsers() {
-    return userService.getAllUsers();
-  }
+    @GetMapping("/")
+    public List<User> getUsers() {
+        return userService.getAllUsers();
+    }
 
-//  @GetMapping("/users/{firstName}")
-//  public List<User> getNamedUsers(@PathVariable(name = "firstName") String firstName) {
-//    return userService.getNamedUsers(firstName);
-//  }
-//
-//  @GetMapping("/users/{firstName}/{id}")
-//  public User getUser(@PathVariable(name = "firstName") String firstName, @PathVariable(name = "id") Long id) {
-//    User user = userService.getUser(firstName, id);
-//    if (Objects.isNull(user)) {
-//      throw new UserNotFound(String.format("User with name %s and id %s was not found", firstName, id));
-//    }
-//    return userService.getUser(firstName, id);
-//  }
+    @GetMapping("/users/{id}")
+    public User getUserByID(@PathVariable Long id) {
+        return userService.getUserByID(id);
+    }
 
-  @PostMapping("/")
-  public User addUser(@RequestBody User user) {
-    return userService.addUser(user);
-  }
+    @PostMapping("/")
+    public User addUser(@RequestBody User user) {
+        return userService.addUser(user);
+    }
 }

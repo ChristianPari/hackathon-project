@@ -4,8 +4,10 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/project/pom.xml" />
+        <option value="$PROJECT_DIR$/user-service/pom.xml" />
+        <option value="$PROJECT_DIR$/ticket-service/pom.xml" />
       </list>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_16" default="true" project-jdk-name="16.0.2" project-jdk-type="JavaSDK" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11.0.11" project-jdk-type="JavaSDK" />
 </project>
