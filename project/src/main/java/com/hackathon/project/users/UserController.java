@@ -22,7 +22,8 @@ public class UserController {
                 "Welcome to our Ticket Issuing System.\n" +
                         "/users - returns list of users.\n" +
                         "/users/{firstName} - returns list of users with the given firstName.\n" +
-                        "/users/{firstName}/{id} - returns a specific user that matches given name and id.\n";
+                        "/users/{firstName}/{id} - returns a specific user that matches given name and id.\n" +
+                        "/user with parameters of firstName and lastName example user?firstName=(enter first name))&lastname=(enter first name))\n";
         String html = output.replaceAll("(\n)", "<br>");
         return html;
     }
@@ -44,6 +45,12 @@ public class UserController {
             throw new UserNotFound(String.format("User with name %s and id %s was not found", firstName, id));
         }
         return userService.getUser(firstName, id);
+    }
+
+    @PostMapping("/user")
+    public User addUser(@RequestParam(value = "firstName", defaultValue = "firstName") String firstName,
+                        @RequestParam(value = "lastName", defaultValue = "lastName") String lastName) {
+        return userService.addUser(firstName, lastName);
     }
 
 
