@@ -1,19 +1,14 @@
-package com.hackathon.userservice;
+package com.hackathon.ticketservice;
 
-import javax.persistence.*;
 import lombok.*;
 import java.util.List;
 
-@Entity
-@Table(name = "user")
 @Getter
 @Setter
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
 public class User {
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
   private String firstName;
   private String lastName;
