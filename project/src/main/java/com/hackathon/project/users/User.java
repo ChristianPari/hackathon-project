@@ -2,10 +2,12 @@ package com.hackathon.project.users;
 
 import com.hackathon.project.issues.Issue;
 
+//import javax.persistence.Entity;
 import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.atomic.AtomicLong;
 
+//@Entity
 public class User {
     public static AtomicLong atomicLong = new AtomicLong();
     private Long id = atomicLong.incrementAndGet();

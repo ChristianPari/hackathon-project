@@ -46,4 +46,10 @@ public class UserService {
         }
         return null;
     }
+
+    public User addUser(String firstName, String lastName) {
+        User user = new User(firstName, lastName);
+        users.add(user);
+        return user;
+    }
 }
