@@ -3,8 +3,8 @@ server:
 
 spring:
   datasource:
-    url:
-    username: admin
+    url: jdbc:mysql://172.30.197.157:3306/usersql
+    username:
     password:
   jpa:
     properties:

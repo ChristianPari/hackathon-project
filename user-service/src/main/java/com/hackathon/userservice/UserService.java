@@ -7,16 +7,20 @@ import java.util.List;
 
 @Service
 public class UserService {
-  @Autowired
-  private UserRepository repository;
+    @Autowired
+    private UserRepository repository;
 
-  public List<User> getAllUsers() {
-    return repository.findAll();
-  }
+    public List<User> getAllUsers() {
+        return repository.findAll();
+    }
 
-  public User addUser(User user) {
-    return repository.save(user);
-  }
+    public User addUser(User user) {
+        return repository.save(user);
+    }
+
+    public User getUserByID(Long id) {
+        return repository.getById(id);
+    }
 
 //  public List<User> getNamedUsers(String firstName) {
 //    List<User> output = new ArrayList<>();

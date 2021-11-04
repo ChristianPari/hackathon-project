@@ -4,7 +4,7 @@ server:
 spring:
   datasource:
     url:
-    username: admin
+    username:
     password:
   jpa:
     properties:
