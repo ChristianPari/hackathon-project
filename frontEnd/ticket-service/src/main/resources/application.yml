@@ -1,0 +1,15 @@
+server:
+  port: 3003
+
+spring:
+  datasource:
+    url:
+    username: admin
+    password:
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+    show-sql: true
+  application:
+    name: TICKET-SERVICE
