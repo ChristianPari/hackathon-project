@@ -2,16 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/project/.mvn/.mvn.iml" filepath="$PROJECT_DIR$/project/.mvn/.mvn.iml" />
-      <module fileurl="file://$PROJECT_DIR$/user-service/.mvn/.mvn1.iml" filepath="$PROJECT_DIR$/user-service/.mvn/.mvn1.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ticket-service/.mvn/.mvn2.iml" filepath="$PROJECT_DIR$/ticket-service/.mvn/.mvn2.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/hackathon-project.iml" filepath="$PROJECT_DIR$/.idea/hackathon-project.iml" />
-      <module fileurl="file://$PROJECT_DIR$/user-service/src/main/main.iml" filepath="$PROJECT_DIR$/user-service/src/main/main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ticket-service/src/main/main1.iml" filepath="$PROJECT_DIR$/ticket-service/src/main/main1.iml" />
-      <module fileurl="file://$PROJECT_DIR$/project/src/main/main2.iml" filepath="$PROJECT_DIR$/project/src/main/main2.iml" />
-      <module fileurl="file://$PROJECT_DIR$/project/src/test/test.iml" filepath="$PROJECT_DIR$/project/src/test/test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ticket-service/src/test/test1.iml" filepath="$PROJECT_DIR$/ticket-service/src/test/test1.iml" />
-      <module fileurl="file://$PROJECT_DIR$/user-service/src/test/test2.iml" filepath="$PROJECT_DIR$/user-service/src/test/test2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/project/project.iml" filepath="$PROJECT_DIR$/project/project.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ticket-service/ticket-service.iml" filepath="$PROJECT_DIR$/ticket-service/ticket-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/user-service/user-service.iml" filepath="$PROJECT_DIR$/user-service/user-service.iml" />
     </modules>
   </component>
 </project>
