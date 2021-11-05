@@ -30,9 +30,9 @@ public class UserController {
         return service.getAllUsers();
     }
 
-    @GetMapping("/{id}")
-    public User getUserByID(@PathVariable Long id) {
-        return service.getUserByID(id);
+    @GetMapping("/{userID}")
+    public User getUserByID(@PathVariable("userID") Long userID) {
+        return service.getUserByID(userID);
     }
 
     @PostMapping
@@ -40,8 +40,8 @@ public class UserController {
         return service.addUser(user);
     }
 
-    @PutMapping("/{id}/resetpw")
-    public void resetPassword(@PathVariable Long id,@RequestBody Resetpw resetpw
+    @PutMapping("/resetpw/{id}")
+    public void resetPassword(@PathVariable("id") Long id,@RequestBody Resetpw resetpw
 //                              @RequestParam(name = "prevPass") String prevPass,
 //                              @RequestParam(name = "newPass") String newPass,
 //                              @RequestParam(name = "confirm") String confirm

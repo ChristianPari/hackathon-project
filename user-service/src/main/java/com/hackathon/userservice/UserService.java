@@ -33,6 +33,8 @@ public class UserService {
             throw new WrongPassword();
         if (!resetpw.getNewPassword().equals(resetpw.getConfirmation()))
             throw new WrongPassword("Passwords do not match");
-        repository.getById(id).setPassword(resetpw.getNewPassword());
+        User user = repository.getById(id);
+        user.setPassword(resetpw.getNewPassword());
+        repository.save(user);
     }
 }

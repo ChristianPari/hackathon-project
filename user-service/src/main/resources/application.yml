@@ -1,15 +1,17 @@
-server:
-  port: 3002
-
-spring:
-  datasource:
-    url: jdbc:mysql://172.30.197.157:3306/usersql
-    username:
-    password:
-  jpa:
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.MySQL8Dialect
-    show-sql: true
-  application:
-    name: USER-SERVICE
+#server:
+#  port: 3002
+#
+#spring:
+#  datasource:
+#    url: jdbc:mysql://localhost:3306/userdb
+#    username: userAdmin
+#    password: adminpw
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#  jpa:
+#    properties:
+#      hibernate:
+#        ddl-auto: create
+##        dialect: org.hibernate.dialect.MySQL8Dialect
+#    show-sql: true
+#  application:
+#    name: USER-SERVICE

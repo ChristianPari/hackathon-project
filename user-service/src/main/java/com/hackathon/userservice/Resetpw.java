@@ -5,6 +5,8 @@ public class Resetpw {
     private String newPassword;
     private String confirmation;
 
+    public Resetpw(){}
+
     public Resetpw(String previousPassword, String newPassword, String confirmation) {
         this.previousPassword = previousPassword;
         this.newPassword = newPassword;

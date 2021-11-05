@@ -7,7 +7,6 @@ import lombok.*;
 import java.util.List;
 
 @Entity
-@Table(name = "user")
 @Getter
 @Setter
 @ToString
@@ -20,7 +19,7 @@ public class User {
     private String firstName;
     private String lastName;
     private String password;
-    private List<Integer> departments; // 0 - Gen 1 - Back 2 - Front
-    private List<String> roles;
+    private Integer[] departments; // 0 - Gen 1 - Back 2 - Front
+    private String[] roles;
 //  private Integer issuesHandled;
 }
