@@ -11,7 +11,7 @@ import java.util.Objects;
 public class UserController {
 
     @Autowired
-    public UserService userService;
+    public UserService service;
 
 //  @GetMapping("/intro")
 //  public String intro() {
@@ -25,18 +25,27 @@ public class UserController {
 //    return html;
 //  }
 
-    @GetMapping("/")
+    @GetMapping
     public List<User> getUsers() {
-        return userService.getAllUsers();
+        return service.getAllUsers();
     }
 
-    @GetMapping("/users/{id}")
-    public User getUserByID(@PathVariable Long id) {
-        return userService.getUserByID(id);
+    @GetMapping("/{userID}")
+    public User getUserByID(@PathVariable("userID") Long userID) {
+        return service.getUserByID(userID);
     }
 
-    @PostMapping("/")
+    @PostMapping
     public User addUser(@RequestBody User user) {
-        return userService.addUser(user);
+        return service.addUser(user);
+    }
+
+    @PutMapping("/resetpw/{id}")
+    public void resetPassword(@PathVariable("id") Long id,@RequestBody Resetpw resetpw
+//                              @RequestParam(name = "prevPass") String prevPass,
+//                              @RequestParam(name = "newPass") String newPass,
+//                              @RequestParam(name = "confirm") String confirm
+    ) {
+        service.changePassword(resetpw, id);
     }
 }

@@ -22,22 +22,19 @@ public class UserService {
         return repository.getById(id);
     }
 
-//  public List<User> getNamedUsers(String firstName) {
-//    List<User> output = new ArrayList<>();
-//    for (User user : users) {
-//      if (user.getFirstName().equals(firstName)) {
-//        output.add(user);
-//      }
-//    }
-//    return output;
-//  }
-//
-//  public User getUser(String firstName, Long id) {
-//    for (User user : users) {
-//      if (user.getFirstName().equals(firstName) && user.getId().equals(id)) {
-//        return user;
-//      }
-//    }
-//    return null;
-//  }
+    public void deleteUser(Long id) {
+        if (!repository.existsById(id))
+            throw new UserNotFound();
+        repository.deleteById(id);
+    }
+
+    public void changePassword(Resetpw resetpw, Long id) {
+        if (!repository.getById(id).getPassword().equals(resetpw.getPreviousPassword()))
+            throw new WrongPassword();
+        if (!resetpw.getNewPassword().equals(resetpw.getConfirmation()))
+            throw new WrongPassword("Passwords do not match");
+        User user = repository.getById(id);
+        user.setPassword(resetpw.getNewPassword());
+        repository.save(user);
+    }
 }
