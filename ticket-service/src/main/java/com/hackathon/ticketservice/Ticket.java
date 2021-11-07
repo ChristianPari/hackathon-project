@@ -15,15 +15,15 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Ticket {
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long id;
-  @Column(name = "ref_id")
-  private UUID referenceId = UUID.randomUUID();
-  private User requester;
-  private String status;
-  private String subject;
-  private String content;
-  private List<Response> responses;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    @Column(name = "ref_id")
+    private UUID referenceId = UUID.randomUUID();
+//    private User requester;
+    private String status;
+    private String subject;
+    private String content;
+    private Response[] responses;
 //  private Boolean open;
 }

@@ -6,19 +6,30 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("tickets")
+@RequestMapping("/tickets")
 public class TicketController {
 
     @Autowired
-    public TicketService ticketService;
+    public TicketService service;
 
     @GetMapping
     public List<Ticket> getTickets() {
-        return ticketService.getTickets();
+        return service.getTickets();
+    }
+
+    @GetMapping("/active")
+    public List<Ticket> getActiveTickets() {
+        return service.getActiveTickets();
+    }
+
+    @PostMapping
+    public Ticket addTicket(@RequestBody Ticket ticket) {
+        return service.addTicket(ticket);
     }
 
     @GetMapping("/id")
     public List<Response> getResponses(@PathVariable Long id) {
-        return ticketService.getResponses(id);
+        return service.getResponses(id);
     }
+
 }

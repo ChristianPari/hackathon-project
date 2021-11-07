@@ -41,11 +41,13 @@ public class UserController {
     }
 
     @PutMapping("/resetpw/{id}")
-    public void resetPassword(@PathVariable("id") Long id,@RequestBody Resetpw resetpw
-//                              @RequestParam(name = "prevPass") String prevPass,
-//                              @RequestParam(name = "newPass") String newPass,
-//                              @RequestParam(name = "confirm") String confirm
-    ) {
+    public void resetPassword(@PathVariable("id") Long id, @RequestBody Resetpw resetpw) {
         service.changePassword(resetpw, id);
     }
+
+    @DeleteMapping("/{id}")
+    public void deleteUser(@PathVariable("id") Long id, @RequestBody String incomingAuthorization) {
+        service.deleteUser(id, incomingAuthorization);
+    }
+
 }
