@@ -1,9 +1,12 @@
 package com.hackathon.ticketservice;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
 import java.util.List;
 
+@Service
 public class TicketService {
     @Autowired
     private TicketRepository repository;
@@ -12,7 +15,16 @@ public class TicketService {
         return repository.findAll();
     }
 
+    public List<Ticket> getActiveTickets() {
+        return repository.getAllByStatus("active");
+    }
+
     public List<Response> getResponses(Long id) {
-        return repository.getById(id).getResponses();
+        return Arrays.asList(repository.getById(id).getResponses());
+    }
+
+    public Ticket addTicket(Ticket ticket) {
+        repository.save(ticket);
+        return ticket;
     }
 }

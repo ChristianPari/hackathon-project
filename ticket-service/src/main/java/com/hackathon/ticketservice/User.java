@@ -1,6 +1,9 @@
 package com.hackathon.ticketservice;
 
 import lombok.*;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.util.List;
 
 @Getter
@@ -13,6 +16,6 @@ public class User {
   private String firstName;
   private String lastName;
   private String password;
-  private List<String> roles;
+  private String[] roles;
 //  private Integer issuesHandled;
 }

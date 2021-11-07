@@ -9,6 +9,7 @@ import java.util.List;
 public class UserService {
     @Autowired
     private UserRepository repository;
+    private String authorization = "admin";
 
     public List<User> getAllUsers() {
         return repository.findAll();
@@ -22,9 +23,13 @@ public class UserService {
         return repository.getById(id);
     }
 
-    public void deleteUser(Long id) {
+    public void deleteUser(Long id, String incomingAuthorization) {
+        //TODO a better way to have authoriation for actions
+        //temporarily local variable later possibly as a field
         if (!repository.existsById(id))
             throw new UserNotFound();
+        if (!incomingAuthorization.equals(authorization))
+            throw new WrongPassword();
         repository.deleteById(id);
     }
 
