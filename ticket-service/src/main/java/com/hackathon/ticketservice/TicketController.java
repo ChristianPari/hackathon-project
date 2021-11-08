@@ -27,9 +27,13 @@ public class TicketController {
         return service.addTicket(ticket);
     }
 
-    @GetMapping("/id")
+    @GetMapping("/{id}")
     public List<Response> getResponses(@PathVariable Long id) {
         return service.getResponses(id);
     }
 
+    @DeleteMapping("/{id}")
+    public void deleteTicket(@PathVariable Long id) {
+        service.deleteTicket(id);
+    }
 }

@@ -27,4 +27,10 @@ public class TicketService {
         repository.save(ticket);
         return ticket;
     }
+
+    public void deleteTicket(Long id) {
+        if (!repository.existsById(id))
+            throw new TicketNotFound("Ticket with given id Not Found for deletion");
+        repository.deleteById(id);
+    }
 }
