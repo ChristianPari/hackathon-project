@@ -4,6 +4,7 @@ import lombok.*;
 
 import javax.persistence.*;
 //import java.util.List;
+import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
@@ -20,9 +21,10 @@ public class Ticket {
     private Long id;
     @Column(name = "ref_id")
     private UUID referenceId = UUID.randomUUID();
-//    private User requester;
+    private Date ticketDate;
+    private String department;
     private String status;
-    private String subject;
+    private String title;
     private String content;
     private Response[] responses;
 //  private Boolean open;

@@ -42,6 +42,9 @@ public class UserController {
 
     @PutMapping("/resetpw/{id}")
     public void resetPassword(@PathVariable("id") Long id, @RequestBody Resetpw resetpw) {
+        //prevpass
+        //newpass
+        //confirmation
         service.changePassword(resetpw, id);
     }
 
