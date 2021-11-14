@@ -27,13 +27,21 @@ public class TicketController {
         return service.addTicket(ticket);
     }
 
-    @GetMapping("/{id}")
-    public List<Response> getResponses(@PathVariable Long id) {
-        return service.getResponses(id);
-    }
+//TODO send a request to response service with ticket_id
+
+//    @GetMapping("/{id}")
+//    public List<Response> getResponses(@PathVariable Long id) {
+//        return service.getResponses(id);
+//    }
 
     @DeleteMapping("/{id}")
     public void deleteTicket(@PathVariable Long id) {
         service.deleteTicket(id);
+    }
+
+    @PutMapping("/{id}")
+    public Ticket updateTicket(@PathVariable Long id,
+                               @RequestBody Ticket ticket){
+        return service.updateTicket(id,ticket);
     }
 }
