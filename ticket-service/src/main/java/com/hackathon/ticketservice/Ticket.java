@@ -4,6 +4,7 @@ import lombok.*;
 
 import javax.persistence.*;
 //import java.util.List;
+import java.time.Instant;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
@@ -21,7 +22,7 @@ public class Ticket {
     private Long id;
     @Column(name = "ref_id")
     private UUID referenceId = UUID.randomUUID();
-    private Date ticketDate;
+    private Date ticketDate = Date.from(Instant.now());
     private String department;
     private String status;
     private String title;

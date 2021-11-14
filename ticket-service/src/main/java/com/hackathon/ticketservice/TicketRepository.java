@@ -9,5 +9,5 @@ import java.util.List;
 @Repository
 public interface TicketRepository extends JpaRepository<Ticket, Long> {
     @Query("SELECT t FROM Ticket t where t.status = :status")
-    List<Ticket> getAllByStatus(String status);
+    List<Ticket> getAllActiveTickets(String status);
 }
