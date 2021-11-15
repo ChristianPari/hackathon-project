@@ -28,5 +28,10 @@ public class Ticket {
     private String title;
     private String content;
     private Response[] responses;
+
+    public void addResponse(Response response){
+        responses[responses.length]=response;
+    }
+
 //  private Boolean open;
 }

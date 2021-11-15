@@ -1,8 +1,10 @@
 package com.hackathon.responseservice;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 
@@ -11,6 +13,11 @@ public class ResponseService {
 
     @Autowired
     private ResponseRepository repository;
+
+    @Bean
+    public RestTemplate restTemplate() {
+        return new RestTemplate();
+    }
 
     public List<Response> getResponsesFromUser(Long user_id) {
         return repository.findAllByUser_id(user_id);
@@ -22,6 +29,7 @@ public class ResponseService {
 
     public Response addResponseToTicket(Long ticket_id, Response response) {
         response.setTicket_id(ticket_id);
+        restTemplate().put("http://localhost:8081/tickets/"+ticket_id,response);
         return repository.save(response);
     }
 
