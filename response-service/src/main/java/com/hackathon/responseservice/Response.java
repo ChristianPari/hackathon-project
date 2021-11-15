@@ -7,7 +7,6 @@ import java.time.Instant;
 import java.util.Date;
 
 @Entity
-@Table(name = "response")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -22,8 +21,6 @@ public class Response {
 
     //get all responses from a certain user
     private Long user_id;
-
-    private Date date = Date.from(Instant.now());
 
     private String content;
 }

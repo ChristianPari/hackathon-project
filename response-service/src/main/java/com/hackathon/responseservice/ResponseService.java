@@ -29,7 +29,7 @@ public class ResponseService {
 
     public Response addResponseToTicket(Long ticket_id, Response response) {
         response.setTicket_id(ticket_id);
-        restTemplate().put("http://localhost:8081/tickets/"+ticket_id,response);
+        restTemplate().put("http://tickets-service-fred555-dev.apps.sandbox.x8i5.p1.openshiftapps.com/tickets/"+ticket_id,response);
         return repository.save(response);
     }
 

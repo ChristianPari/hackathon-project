@@ -9,6 +9,7 @@ import java.util.List;
 public class UserService {
     @Autowired
     private UserRepository repository;
+
     private String authorization = "admin";
 
     public List<User> getAllUsers() {
