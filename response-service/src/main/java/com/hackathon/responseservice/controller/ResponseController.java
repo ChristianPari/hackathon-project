@@ -1,7 +1,8 @@
-package com.hackathon.responseservice;
+package com.hackathon.responseservice.controller;
 
+import com.hackathon.responseservice.entity.Response;
+import com.hackathon.responseservice.service.ResponseService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

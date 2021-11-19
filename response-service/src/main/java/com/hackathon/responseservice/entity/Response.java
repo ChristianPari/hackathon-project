@@ -1,4 +1,4 @@
-package com.hackathon.responseservice;
+package com.hackathon.responseservice.entity;
 
 import lombok.*;
 

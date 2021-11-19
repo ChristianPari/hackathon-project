@@ -1,8 +1,9 @@
-package com.hackathon.responseservice;
+package com.hackathon.responseservice.service;
 
+import com.hackathon.responseservice.entity.Response;
+import com.hackathon.responseservice.repository.ResponseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
