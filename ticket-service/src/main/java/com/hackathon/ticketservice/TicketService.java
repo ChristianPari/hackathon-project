@@ -46,7 +46,7 @@ public class TicketService {
         if (!repository.existsById(id))
             throw new TicketNotFound("Ticket with given id Not Found for deletion");
         repository.deleteById(id);
-        restTemplate().delete("http://localhost:8081/responses/" + id, Response.class);
+        restTemplate().delete("http://responses-service-fred555-dev.apps.sandbox.x8i5.p1.openshiftapps.com/responses/" + id, Response.class);
 
     }
 
