@@ -13,18 +13,6 @@ public class UserController {
     @Autowired
     public UserService service;
 
-//  @GetMapping("/intro")
-//  public String intro() {
-//    String output =
-//      "Welcome to our Ticket Issuing System.\n" +
-//        "/users - returns list of users.\n" +
-//        "/users/{firstName} - returns list of users with the given firstName.\n" +
-//        "/users/{firstName}/{id} - returns a specific user that matches given name and id.\n" +
-//        "/user with parameters of firstName and lastName example user?firstName=(enter first name))&lastname=(enter first name))\n";
-//    String html = output.replaceAll("(\n)", "<br>");
-//    return html;
-//  }
-
     @GetMapping
     public List<User> getUsers() {
         return service.getAllUsers();
@@ -42,6 +30,9 @@ public class UserController {
 
     @PutMapping("/resetpw/{id}")
     public void resetPassword(@PathVariable("id") Long id, @RequestBody Resetpw resetpw) {
+        //prevpass
+        //newpass
+        //confirmation
         service.changePassword(resetpw, id);
     }
 
