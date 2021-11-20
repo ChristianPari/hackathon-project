@@ -1,5 +1,6 @@
-package com.hackathon.userservice;
+package com.hackathon.userservice.repositories;
 
+import com.hackathon.userservice.models.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

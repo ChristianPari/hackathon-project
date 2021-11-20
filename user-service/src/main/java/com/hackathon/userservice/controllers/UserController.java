@@ -1,20 +1,25 @@
-package com.hackathon.userservice;
+package com.hackathon.userservice.controllers;
 
+import com.hackathon.userservice.models.Resetpw;
+import com.hackathon.userservice.services.UserService;
+import com.hackathon.userservice.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Objects;
 
 @RestController
 @RequestMapping("/users")
 public class UserController {
+
+
 
     @Autowired
     public UserService service;
 
     @GetMapping
     public List<User> getUsers() {
+//        System.out.println(url);
         return service.getAllUsers();
     }
 
