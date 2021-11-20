@@ -6,8 +6,6 @@
       <module fileurl="file://$PROJECT_DIR$/response-service/response-service.iml" filepath="$PROJECT_DIR$/response-service/response-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/ticket-service/ticket-service.iml" filepath="$PROJECT_DIR$/ticket-service/ticket-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/user-service/user-service.iml" filepath="$PROJECT_DIR$/user-service/user-service.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ticket-service/.mvn/wrapper/wrapper (1).iml" filepath="$PROJECT_DIR$/ticket-service/.mvn/wrapper/wrapper (1).iml" />
-      <module fileurl="file://$PROJECT_DIR$/user-service/.mvn/wrapper/wrapper (2).iml" filepath="$PROJECT_DIR$/user-service/.mvn/wrapper/wrapper (2).iml" />
     </modules>
   </component>
 </project>
