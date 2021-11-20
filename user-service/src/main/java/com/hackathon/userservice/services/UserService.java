@@ -1,5 +1,10 @@
-package com.hackathon.userservice;
+package com.hackathon.userservice.services;
 
+import com.hackathon.userservice.models.Resetpw;
+import com.hackathon.userservice.exceptions.WrongPassword;
+import com.hackathon.userservice.exceptions.UserNotFound;
+import com.hackathon.userservice.models.User;
+import com.hackathon.userservice.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

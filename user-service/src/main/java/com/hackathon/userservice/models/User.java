@@ -1,4 +1,4 @@
-package com.hackathon.userservice;
+package com.hackathon.userservice.models;
 
 import javax.persistence.*;
 

@@ -1,4 +1,4 @@
-package com.hackathon.ticketservice;
+package com.hackathon.ticketservice.tickets;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
