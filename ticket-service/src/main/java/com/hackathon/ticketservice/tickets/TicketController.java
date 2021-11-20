@@ -1,4 +1,4 @@
-package com.hackathon.ticketservice;
+package com.hackathon.ticketservice.tickets;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -29,10 +29,8 @@ public class TicketController {
 
 //TODO send a request to response service with ticket_id
 
-//    @GetMapping("/{id}")
-//    public List<Response> getResponses(@PathVariable Long id) {
-//        return service.getResponses(id);
-//    }
+//create response in response service
+    //send it to ticket to add it
 
     @DeleteMapping("/{id}")
     public void deleteTicket(@PathVariable Long id) {

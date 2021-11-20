@@ -1,12 +1,13 @@
-package com.hackathon.ticketservice;
+package com.hackathon.ticketservice.tickets;
 
+import com.hackathon.ticketservice.responses.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.Arrays;
 import java.util.List;
+import java.util.Set;
 
 @Service
 public class TicketService {
@@ -26,8 +27,8 @@ public class TicketService {
         return repository.getAllActiveTickets("active");
     }
 
-    public List<Response> getResponses(Long id) {
-        return Arrays.asList(repository.getById(id).getResponses());
+    public Set<Response> getResponses(Long id) {
+        return repository.getById(id).getResponses();
     }
 
     public Ticket addTicket(Ticket ticket) {
@@ -37,7 +38,8 @@ public class TicketService {
 
     public Ticket addResponse(Long id, Response response) {
         return repository.findById(id).map(ticket -> {
-            ticket.addResponse(response);
+
+            ticket.getResponses().add(response);
             return repository.save(ticket);
         }).orElseThrow(TicketNotFound::new);
     }
